@@ -1,5 +1,5 @@
 #include "raylib.h"
 int main()
 {
-    InitWindow(350, 200, "Maciej's window");
+    InitWindow(1350, 1200, "Maciej's window");
 }
