@@ -5,7 +5,7 @@ int main()
     width = 350;
     InitWindow(width, 200, "Maciej's window");
 
-    while ( true )
+    while ( WindowShouldClose() == false )
     {
         BeginDrawing();
         ClearBackground( RED );
