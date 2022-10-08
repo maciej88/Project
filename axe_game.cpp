@@ -10,7 +10,7 @@ int main()
     int circle_X{175};
     int circle_y{100};
 
-
+    SetTargetFPS(60);
     while ( WindowShouldClose() == false )
     {
         BeginDrawing();
