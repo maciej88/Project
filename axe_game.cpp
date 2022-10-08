@@ -19,9 +19,13 @@ int main()
         // starting game logic
         DrawCircle(circle_X, circle_y, 25, BLUE);
 
-        if (IsKeyDown(KEY_D))
+        if (IsKeyDown(KEY_D) && circle_X < 350)
         {
             circle_X += 10;
+        }
+        if (IsKeyDown(KEY_A) && circle_X > 0)
+        {
+            circle_X -= 10;
         }
         // ending game logic
         EndDrawing();
