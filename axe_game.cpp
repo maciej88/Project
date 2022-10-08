@@ -2,17 +2,19 @@
 int main()
 {
     // window dimensions
-    int width;
-    width = 350;
-    InitWindow(width, 200, "Maciej's window");
+    int width{800};
+    int height{450};
+    InitWindow(width, height, "Maciej's window");
 
     //circle coordinates
-    int circle_X{175};
-    int circle_y{100};
+    int circle_X{200};
+    int circle_y{200};
+
+    // axe cordinates
     int rectangle_x(300);
     int rectangle_y(0);
     int rectangle_width(50);
-    int rectangle_hight(50);
+    int rectangle_height(50);
 
     SetTargetFPS(60);
     while ( WindowShouldClose() == false )
@@ -22,7 +24,7 @@ int main()
 
         // starting game logic
         DrawCircle(circle_X, circle_y, 25, BLUE);
-        DrawRectangle(rectangle_x, rectangle_y, rectangle_hight, rectangle_width, RED);
+        DrawRectangle(rectangle_x, rectangle_y, rectangle_height, rectangle_width, RED);
 
         if (IsKeyDown(KEY_D) && circle_X < 350)
         {
