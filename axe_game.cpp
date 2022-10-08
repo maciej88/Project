@@ -11,10 +11,10 @@ int main()
     int circle_y{200};
 
     // axe cordinates
-    int rectangle_x(300);
-    int rectangle_y(0);
-    int rectangle_width(50);
-    int rectangle_height(50);
+    int axe_x(400);
+    int axe_y(0);
+    int axe_width(50);
+    int axe_height(50);
 
     SetTargetFPS(60);
     while ( WindowShouldClose() == false )
@@ -24,8 +24,12 @@ int main()
 
         // starting game logic
         DrawCircle(circle_X, circle_y, 25, BLUE);
-        DrawRectangle(rectangle_x, rectangle_y, rectangle_height, rectangle_width, RED);
+        DrawRectangle(axe_x, axe_y, axe_height, axe_width, RED);
 
+        // axe movement
+        axe_y += 10;
+
+        // controls
         if (IsKeyDown(KEY_D) && circle_X < 350)
         {
             circle_X += 10;
