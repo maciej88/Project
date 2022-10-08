@@ -36,7 +36,7 @@ int main()
         }
 
         // controls
-        if (IsKeyDown(KEY_D) && circle_X < 350)
+        if (IsKeyDown(KEY_D) && circle_X < width)
         {
             circle_X += 10;
         }
