@@ -6,7 +6,7 @@ int main()
     int height{450};
     InitWindow(width, height, "Maciej's window");
 
-    //circle coordinates
+    // circle coordinates
     int circle_x{200};
     int circle_y{200};
     int circle_radius{25};
@@ -15,7 +15,6 @@ int main()
     int r_circle_x{circle_x + circle_radius};
     int u_circle_y{circle_y - circle_radius};
     int b_circle_y{circle_y + circle_radius};
-
 
     // axe cordinates
     int axe_x(400);
@@ -29,35 +28,45 @@ int main()
 
     int direction{10};
 
+    // collision
+    bool collision_with_axe{true};
+
     SetTargetFPS(60);
-    while ( WindowShouldClose() == false )
+    while (WindowShouldClose() == false)
     {
         BeginDrawing();
-        ClearBackground( WHITE );
+        ClearBackground(WHITE);
 
-        // starting game logic
-        DrawCircle(circle_x, circle_y, circle_radius, BLUE);
-        DrawRectangle(axe_x, axe_y, axe_lenght, axe_lenght, RED);
-
-        // axe movement
-        axe_y += direction;
-        if (axe_y > 450 || axe_y < 0)
+        if (collision_with_axe)
         {
-            direction = -direction;
+            DrawText("!!!Game Over!!!", 400, 200, 20, RED);
+        }
+        else
+        {
+            // starting game logic
+            DrawCircle(circle_x, circle_y, circle_radius, BLUE);
+            DrawRectangle(axe_x, axe_y, axe_lenght, axe_lenght, RED);
+
+            // axe movement
+            axe_y += direction;
+            if (axe_y > 450 || axe_y < 0)
+            {
+                direction = -direction;
+            }
+
+            // controls
+            if (IsKeyDown(KEY_D) && circle_x < width)
+            {
+                circle_x += 10;
+            }
+            if (IsKeyDown(KEY_A) && circle_x > 0)
+            {
+                circle_x -= 10;
+            }
+
+            // ending game logic
         }
 
-        // controls
-        if (IsKeyDown(KEY_D) && circle_x < width)
-        {
-            circle_x += 10;
-        }
-        if (IsKeyDown(KEY_A) && circle_x > 0)
-        {
-            circle_x -= 10;
-        }
-
-        // ending game logic
         EndDrawing();
     }
-    
 }
