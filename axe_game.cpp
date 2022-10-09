@@ -29,7 +29,11 @@ int main()
     int direction{10};
 
     // collision
-    bool collision_with_axe{false};
+    bool collision_with_axe = 
+                    (b_axe_y >= u_circle_y) &&
+                    (u_axe_y <= b_circle_y) &&
+                    (r_axe_x >= l_circle_x) &&
+                    (l_axe_x <= r_circle_x);
 
     SetTargetFPS(60);
     while (WindowShouldClose() == false)
