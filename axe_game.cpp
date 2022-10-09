@@ -29,7 +29,7 @@ int main()
     int direction{10};
 
     // collision
-    bool collision_with_axe{true};
+    bool collision_with_axe{false};
 
     SetTargetFPS(60);
     while (WindowShouldClose() == false)
